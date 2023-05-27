@@ -5,11 +5,16 @@ function App() {
   const [count, setCount] = useState(0);
 
 
+  function inc() {
+    setCount(count + 1)
+  }
+
+
 
   return (
     <div className="App">
       {count}
-      <button onClick={() => setCount(count + 1)}>increase count</button>
+      <button onClick={inc}>increase count</button>
     </div>
   );
 }
