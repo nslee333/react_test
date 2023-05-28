@@ -1,19 +1,43 @@
 import './App.css';
 import { useState } from 'react';
 
+
+const init = [
+  {task: "do stuff"}
+];
+
+
+
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [t, setT] = useState(init);
+
 
 
   function inc() {
-    setCount(count + 1)
+    console.log(typeof t)
+    const task = {task: "stuff ++"}
+
+    let arr = [...t];
+
+    for (let i = 0; i < t.length; i++) {
+      console.log(t[i])
+      console.log(t.length)
+      arr.push(t[i]);
+    }
+
+    const newArr = arr.push(task);
+    
+    setT(newArr)
+    console.log(t)
+    console.log(arr);
   }
 
 
 
   return (
     <div className="App">
-      {count}
+      {t.task}
       <button onClick={inc}>increase count</button>
     </div>
   );
